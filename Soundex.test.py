@@ -10,6 +10,8 @@ class TestSoundex(unittest.TestCase):
     def test_single_character(self):
         self.assertEqual(generate_soundex("A"), "A000")
 
+    def test_encode_name(self):
+        self.assertEqual(encode_name(0,"A"),"A000")
 
     
 if __name__ == '__main__':
