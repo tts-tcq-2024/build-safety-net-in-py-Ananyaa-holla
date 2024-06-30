@@ -1,5 +1,6 @@
 import unittest
 from Soundex import generate_soundex
+from Soundex import encode_name
 
 class TestSoundex(unittest.TestCase):
 
@@ -8,6 +9,7 @@ class TestSoundex(unittest.TestCase):
 
     def test_single_character(self):
         self.assertEqual(generate_soundex("A"), "A000")
+
 
     
 if __name__ == '__main__':
