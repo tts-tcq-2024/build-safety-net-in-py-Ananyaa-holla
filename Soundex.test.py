@@ -13,6 +13,9 @@ class TestSoundex(unittest.TestCase):
     def test_encode_name(self):
         self.assertEqual(encode_name("Aeiou","A",0),"A000")
 
+    def test_long_string(self):
+        self.assertEqual(generate_soundex("Jackandsmith"), "J532")        
+
     
 if __name__ == '__main__':
     unittest.main()
