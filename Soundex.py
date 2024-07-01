@@ -10,10 +10,13 @@ def get_soundex_code(c):
     }
     return mapping.get(c, '0')  # Default to '0' for non-mapped characters
 
+def check_code_state(code,prev_code):
+    return code != '0' and code != prev_code
+    
 def encode_name(name, soundex,prev_code):
     for char in name[1:]:
         code = get_soundex_code(char)
-        if code != '0' and code != prev_code:
+        if check_code_state(code,prev_code):
             soundex += code
             prev_code = code
         if len(soundex) == 4:
