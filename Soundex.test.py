@@ -14,7 +14,13 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(encode_name("Aeiou","A",0),"A000")
 
     def test_long_string(self):
-        self.assertEqual(generate_soundex("Jackandsmith"), "J532")        
+        self.assertEqual(generate_soundex("Jackandsmith"), "J532")      
+
+    def test_non_alphabetic_characters(self):
+         self.assertEqual(generate_soundex("1234"), "1000") 
+
+    def test_mixed_chars(self):
+        self.assertEqual(generate_soundex("Jackfruit@home"), "J163") 
 
     
 if __name__ == '__main__':
